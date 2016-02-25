@@ -1,4 +1,4 @@
-caffe_root = '.../caffe-posenet/'  # Change to your directory to caffe-posenet
+caffe_root = 'home/rlig/workspace/caffe-posenet/'  # Change to your directory to caffe-posenet
 import sys
 sys.path.insert(0, caffe_root + 'python')
 
@@ -8,7 +8,7 @@ import caffe
 import random
 import cv2
 
-directory = '.../CambridgeLandmarks/Kings/'
+directory = 'posenet/dataset/KingsCollege/'
 dataset = 'dataset_train.txt'
 
 poses = []
@@ -34,7 +34,7 @@ r = list(range(len(images)))
 random.shuffle(r)
 
 print 'Creating PoseNet Dataset.'
-env = lmdb.open('posenet_dataset_lmdb', map_size=int(1e12))
+env = lmdb.open('posenet/dataset/posenet_kings_test_lmdb', map_size=int(1e12))
 
 count = 0
 
